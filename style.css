@@ -1,0 +1,99 @@
+﻿body {
+    background-size: 100%; /*根據圖片比例隨視窗大小變動*/
+    /*background-color: darkblue;*/
+}
+
+div {
+    backdrop-filter: blur(10px);
+    text-align: center;
+    min-height: 97vh;
+    /*background-color: darkblue;*/
+}
+
+hr {
+    color: white;
+}
+
+h1, h2, h3, caption {
+    color: white;
+}
+
+table {
+    border: 2px initial;
+    margin-left: auto;   /*左右置中*/
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.7);   /*第四項為透明度*/
+}
+
+table.indexBgm {   /*首頁bgm*/
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 100;   /*移至第100層*/
+    background-color: rgba(255, 255, 255, 0);
+}td.indexBgm {
+    width: auto;
+    color: white;
+}
+
+table#content {
+    position: fixed;
+    top: 45px;
+    left: 0px;
+    min-width: 270px;
+    background-color: floralwhite;
+    border: 4px ridge;
+    line-height: 27px;
+    z-index: 90;
+}
+
+th, a, .intro {
+    font-size: 18px;
+    color: black;
+    min-width: 150px;
+    padding: 10px;
+}
+
+td.playList, td.opt {
+    max-width: 700px;
+    width: 350px;
+}
+
+td.opt {   /*quiz裡的選項*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+}td.opt:hover {   /*同上*/
+    background-color: rgba(250, 250, 210, 0.5);   /*lightgoldenrodyellow*/
+}
+
+img {
+    max-width: 100%;
+}img.quizPic {
+     height: 360px;
+ }
+
+button, input.button { /*一般按鈕、quiz的input按鈕*/
+    width: 100px;
+    height: 40px;
+    border: hidden;
+    background-color: lightblue;
+    border-radius: 20px;
+    z-index: 100; /*移至第100層*/
+}button:hover, input.button:hover {   /*同上*/
+    background-color: blue;
+    color: white;
+}
+
+button.backButton {   /*回上頁按鈕*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border-radius: 0px;
+}
+
+button.contentButton {   /*顯示目錄按鈕*/
+    position: fixed;
+    top: 0px;
+    left: 105px;
+    border-radius: 0px;
+}
