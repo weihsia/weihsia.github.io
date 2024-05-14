@@ -36,7 +36,7 @@ table.indexBgm {   /*首頁bgm*/
     color: white;
 }
 
-table#content {
+table#content {   /*soundtrack目錄*/
     position: fixed;
     top: 45px;
     left: 0px;
@@ -50,16 +50,16 @@ table#content {
 th, a, .intro {
     font-size: 18px;
     color: black;
-    min-width: 150px;
     padding: 10px;
+    min-width: 24vh;
 }
 
-td.playList, td.opt {
+td.playList, td.opt {   /*playlist和quiz選項的表格*/
     max-width: 700px;
     width: 350px;
 }
 
-td.opt {   /*quiz裡的選項*/
+td.opt {   /*quiz選項格*/
     padding-top: 10px;
     padding-bottom: 10px;
 }td.opt:hover {   /*同上*/
