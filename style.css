@@ -1,5 +1,5 @@
 ﻿body {
-    background-size: 100%; /*根據圖片比例隨視窗大小變動*/
+    background-size: 100%;   /*根據圖片比例隨視窗大小變動*/
     /*background-color: darkblue;*/
 }
 
@@ -36,7 +36,7 @@ table.indexBgm {   /*首頁bgm*/
     color: white;
 }
 
-table#content {
+table#content {   /*soundtrack目錄*/
     position: fixed;
     top: 45px;
     left: 0px;
@@ -47,24 +47,28 @@ table#content {
     z-index: 90;
 }
 
-th, a, .intro {
+th, a, .intro, .res {
     font-size: 18px;
     color: black;
-    min-width: 150px;
     padding: 10px;
+    min-width: 24vh;
 }
 
-td.playList, td.opt {
+td.playList, td.opt {   /*playlist和quiz選項的表格*/
     max-width: 700px;
     width: 350px;
 }
 
-td.opt {   /*quiz裡的選項*/
+td.opt {   /*quiz選項格*/
     padding-top: 10px;
     padding-bottom: 10px;
 }td.opt:hover {   /*同上*/
     background-color: rgba(250, 250, 210, 0.5);   /*lightgoldenrodyellow*/
 }
+
+ td.res {
+     text-align: left;
+ }
 
 img {
     max-width: 100%;
@@ -72,14 +76,14 @@ img {
      height: 360px;
  }
 
-button, input.button { /*一般按鈕、quiz的input按鈕*/
+button { /*一般按鈕*/
     width: 100px;
     height: 40px;
     border: hidden;
     background-color: lightblue;
     border-radius: 20px;
-    z-index: 100; /*移至第100層*/
-}button:hover, input.button:hover {   /*同上*/
+    z-index: 100;   /*移至第100層*/
+}button:hover {   /*同上*/
     background-color: blue;
     color: white;
 }
@@ -96,4 +100,26 @@ button.contentButton {   /*顯示目錄按鈕*/
     top: 0px;
     left: 105px;
     border-radius: 0px;
+}
+
+div.bilibili {   /*bilibili的iframe頁面*/
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+table.bilibili_top_half {
+    height: 75vh;
+    width: 65%;
+}
+
+table.bilibili_bottom_half {
+    height: 40vh;
+    width: 65%;
+    display: block;
+    overflow-y: scroll;
+}
+
+iframe.bilibili_iframe {
+    height: 100%;
+    width: 100%;
 }
