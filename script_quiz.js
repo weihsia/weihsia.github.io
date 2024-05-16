@@ -67,7 +67,7 @@ function calcScore() {   //計算成績
             if (ans[j].checked) {
                 //your_ans[i] = j;   //選的選項的index
                 //your_ans.push(ans[j].nextSibling.nodeValue.trim());   //array版
-                your_ans += ans[j].nextSibling.nodeValue.trim() + ",";   //string版
+                your_ans += ans[j].nextSibling.nodeValue.trim() + "^";   //string版
                 if (j == ansList[i]) {   //答對
                     score++;
                 }
@@ -93,7 +93,7 @@ function showResult() {   //成績顯示
 
     var score = urlParams.get("score");
     var t_score = urlParams.get("t_score");
-    var your_ans = urlParams.get("your_ans").split(","); //string轉array
+    var your_ans = urlParams.get("your_ans").split("^"); //string轉array
 
     document.getElementById("scr").innerText = score;   //顯示得分
     document.getElementById("t_scr").innerText = t_score;   //顯示總分
