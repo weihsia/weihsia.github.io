@@ -10,10 +10,6 @@ div {
     /*background-color: darkblue;*/
 }
 
-hr {
-    color: white;
-}
-
 h1, h2, h3, caption {
     color: white;
 }
@@ -23,6 +19,13 @@ table {
     margin-left: auto;   /*左右置中*/
     margin-right: auto;
     background-color: rgba(255, 255, 255, 0.7);   /*第四項為透明度*/
+}
+
+th, a, .res {
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    min-width: 24vh;
 }
 
 table.indexBgm {   /*首頁bgm*/
@@ -36,25 +39,7 @@ table.indexBgm {   /*首頁bgm*/
     color: white;
 }
 
-table#content {   /*soundtrack目錄*/
-    position: fixed;
-    top: 45px;
-    left: 0px;
-    min-width: 270px;
-    background-color: floralwhite;
-    border: 4px ridge;
-    line-height: 27px;
-    z-index: 90;
-}
-
-th, a, .intro, .res {
-    font-size: 18px;
-    color: black;
-    padding: 10px;
-    min-width: 24vh;
-}
-
-td.playList, td.opt {   /*playlist和quiz選項的表格*/
+td.opt {   /*playlist和quiz選項的表格*/
     max-width: 700px;
     width: 350px;
 }
@@ -93,33 +78,4 @@ button.backButton {   /*回上頁按鈕*/
     top: 0px;
     left: 0px;
     border-radius: 0px;
-}
-
-button.contentButton {   /*顯示目錄按鈕*/
-    position: fixed;
-    top: 0px;
-    left: 105px;
-    border-radius: 0px;
-}
-
-div.bilibili {   /*bilibili的iframe頁面*/
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-table.bilibili_top_half {
-    height: 75vh;
-    width: 65%;
-}
-
-table.bilibili_bottom_half {
-    height: 40vh;
-    width: 65%;
-    display: block;
-    overflow-y: scroll;
-}
-
-iframe.bilibili_iframe {
-    height: 100%;
-    width: 100%;
 }
