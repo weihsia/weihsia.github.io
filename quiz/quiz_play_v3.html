@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>quiz_play</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js"></script>
+    <script src="script_quiz_v3.js"></script>
+</head>
+<body style="background-image: url(src/quizBackground.jpg)">
+    <button class="backButton" onclick="exitQuiz();">Back</button>
+    <div>
+        <form name="quiz" onsubmit="calcScore(); return false;">
+            <table id="quiz1" border="1" hidden>
+                <caption>_</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/01.jpg" />
+                        <audio src="src/01.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="1a" class="opt"><input id="1a" name="q1" type="radio" /> A. Warum kannst du mich nicht lieben?</td>
+                    <td id="1b" class="opt"><input id="1b" name="q1" type="radio" /> B. Die Schatten werden länger (Reprise)</td>
+                </tr>
+                <tr>
+                    <td id="1c" class="opt"><input id="1c" name="q1" type="radio" /> C. Der einfache Weg</td>
+                    <td id="1d" class="opt"><input id="1d" name="q1" type="radio" /> D. Gott, warum?</td>
+                </tr>
+            </table>
+            <table id="quiz2" border="1" hidden>
+                <caption>_</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/02.jpg" />
+                        <audio src="src/02.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="2a" class="opt"><input id="2a" name="q2" type="radio" /> A. Der letzte Tanz</td>
+                    <td id="2b" class="opt"><input id="2b" name="q2" type="radio" /> B. Wenn ich dein Spiegel wär</td>
+                </tr>
+                <tr>
+                    <td id="2c" class="opt"><input id="2c" name="q2" type="radio" /> C. Wie kann es möglich sein?</td>
+                    <td id="2d" class="opt"><input id="2d" name="q2" type="radio" /> D. Der einfache Weg</td>
+                </tr>
+            </table>
+            <table id="quiz3" border="1" hidden>
+                <caption>_</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/03.jpg" />
+                        <audio src="src/03.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="3a" class="opt"><input id="3a" name="q3" type="radio" /> A. Rebecca (Reprise)</td>
+                    <td id="3b" class="opt"><input id="3b" name="q3" type="radio" /> B. Wenn ich tanzen will</td>
+                </tr>
+                <tr>
+                    <td id="3c" class="opt"><input id="3c" name="q3" type="radio" /> C. Jenseits der Nacht</td>
+                    <td id="3d" class="opt"><input id="3d" name="q3" type="radio" /> D. Der Schleier fällt</td>
+                </tr>
+            </table>
+            <table id="quiz4" border="1" hidden>
+                <caption>_</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/04.jpg" />
+                        <audio src="src/04.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="4a" class="opt"><input id="4a" name="q4" type="radio" /> A. Die Schatten werden länger (Reprise)</td>
+                    <td id="4b" class="opt"><input id="4b" name="q4" type="radio" /> B. Ich bin, ich bin Musik</td>
+                </tr>
+                <tr>
+                    <td id="4c" class="opt"><input id="4c" name="q4" type="radio" /> C. Wenn ich dein Spiegel wär</td>
+                    <td id="4d" class="opt"><input id="4d" name="q4" type="radio" /> D. Wie wird man seinen Schatten los?</td>
+                </tr>
+            </table>
+            <table id="quiz5" border="1" hidden>
+                <caption>_</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/05.jpg" />
+                        <audio src="src/05.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="5a" class="opt"><input id="5a" name="q5" type="radio" /> A. Ich gehör nur mir</td>
+                    <td id="5b" class="opt"><input id="5b" name="q5" type="radio" /> B. Der letzte Tanz</td>
+                </tr>
+                <tr>
+                    <td id="5c" class="opt"><input id="5c" name="q5" type="radio" /> C. Irgendwo wird immer getanzt</td>
+                    <td id="5d" class="opt"><input id="5d" name="q5" type="radio" /> D. Rebecca (Reprise)</td>
+                </tr>
+            </table>
+            <br />
+            <button id="buttonPrevious" type="button" onclick="showPrevious();" hidden>Previous</button>
+            <button id="buttonNext" type="button" onclick="showNext();">Next</button>
+            <button id="quizSubmit" type="submit" hidden>Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById(idList[chosenList[0]]).hidden = false;   //顯示抽到的第一題
+    </script>
+</body>
+</html>

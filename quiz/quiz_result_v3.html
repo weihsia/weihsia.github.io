@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>quiz_result</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        table {font-size: 18px;}
+        th {min-width: 20vh;}
+    </style>
+    <script src="../script.js"></script>
+    <script src="script_quiz_v3.js"></script>
+</head>
+<body style="background-image: url(src/quizBackground.jpg)">
+    <div>
+        <br /><h1>Score: <span id="scr">0</span>/<span id="t_scr">0</span></h1><br />
+        <button id="showResTableButton" style="width: 120px" onclick="showResultTable();">Show Answers</button><br />
+        <table border="1" id="resultTable" hidden>
+            <tr>
+                <th>#</th>
+                <th>Your Answer</th>
+                <th>Correct Answer</th>
+            </tr>
+        </table>
+        <br />
+        <button onclick="reopenQuiz();">Try Again</button>
+        <button onclick="toHome();">Home</button>
+    </div>
+    <script>
+        generateTable();
+        showResult();
+    </script>
+</body>
+</html>
