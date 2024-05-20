@@ -1,0 +1,34 @@
+﻿table#content {   /*soundtrack目錄*/
+    background-color: floralwhite;
+    position: fixed;
+    top: 45px;
+    left: 0px;
+    min-width: 50vh;
+    max-height: 80vh;
+    line-height: 27px;
+    border: 4px ridge;
+    display: inline-block;
+    overflow: auto;
+    z-index: 90;
+}
+
+table.hidden {
+    visibility: hidden;
+}
+
+th, td.intro {
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+}
+
+td.intro {
+    width: 24vh;
+}
+
+button.contentButton {   /*顯示目錄按鈕*/
+    position: fixed;
+    top: 0px;
+    left: 105px;
+    border-radius: 0px;
+}

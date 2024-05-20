@@ -1,0 +1,27 @@
+﻿div.bilibili { /*bilibili的iframe頁面*/
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+table.bilibili_top_half {
+    height: 75vh;
+    width: 65%;
+}
+
+table.bilibili_bottom_half {
+    height: 40vh;
+    width: 65%;
+    display: block;
+    overflow-y: scroll;
+}
+
+iframe.bilibili_iframe {
+    height: 100%;
+    width: 100%;
+}
+
+th, td.intro {
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+}
