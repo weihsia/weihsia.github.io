@@ -5,6 +5,19 @@
     <meta charset="utf-8" />
     <title>quiz_play</title>
     <link rel="stylesheet" href="../style.css" />
+    <style>        
+        caption {
+            color: black;
+        }
+        img.quizPic {
+            height: 360px;
+        }
+        span {
+            color: white;
+            font-size: 18px;
+            
+        }
+    </style>
     <script src="../script.js"></script>
     <script src="script_quiz_v3.js"></script>
 </head>
@@ -13,98 +26,499 @@
     <div>
         <form name="quiz" onsubmit="calcScore(); return false;">
             <table id="quiz1" border="1" hidden>
-                <caption>_</caption>
+                <caption>1</caption>
                 <tr>
                     <td colspan="2">
-                        <img class="quizPic" src="src/01.jpg" />
+                        <img class="quizPic" src="src/01.jpg" /><br />
                         <audio src="src/01.mp3" controls></audio>
                     </td>
                 </tr>
                 <tr>
-                    <td id="1a" class="opt"><input id="1a" name="q1" type="radio" /> A. Warum kannst du mich nicht lieben?</td>
-                    <td id="1b" class="opt"><input id="1b" name="q1" type="radio" /> B. Die Schatten werden länger (Reprise)</td>
+                    <td class="opt"><input name="q1" type="radio" /> A. Warum kannst du mich nicht lieben?</td>
+                    <td class="opt"><input name="q1" type="radio" /> B. Die Schatten werden länger (Reprise)</td>
                 </tr>
                 <tr>
-                    <td id="1c" class="opt"><input id="1c" name="q1" type="radio" /> C. Der einfache Weg</td>
-                    <td id="1d" class="opt"><input id="1d" name="q1" type="radio" /> D. Gott, warum?</td>
+                    <td class="opt"><input name="q1" type="radio" /> C. Der einfache Weg</td>
+                    <td class="opt"><input name="q1" type="radio" /> D. Gott, warum?</td>
                 </tr>
             </table>
             <table id="quiz2" border="1" hidden>
-                <caption>_</caption>
+                <caption>2</caption>
                 <tr>
                     <td colspan="2">
-                        <img class="quizPic" src="src/02.jpg" />
+                        <img class="quizPic" src="src/02.jpg" /><br />
                         <audio src="src/02.mp3" controls></audio>
                     </td>
                 </tr>
                 <tr>
-                    <td id="2a" class="opt"><input id="2a" name="q2" type="radio" /> A. Der letzte Tanz</td>
-                    <td id="2b" class="opt"><input id="2b" name="q2" type="radio" /> B. Wenn ich dein Spiegel wär</td>
+                    <td class="opt"><input name="q2" type="radio" /> A. Der letzte Tanz</td>
+                    <td class="opt"><input name="q2" type="radio" /> B. Wenn ich dein Spiegel wär</td>
                 </tr>
                 <tr>
-                    <td id="2c" class="opt"><input id="2c" name="q2" type="radio" /> C. Wie kann es möglich sein?</td>
-                    <td id="2d" class="opt"><input id="2d" name="q2" type="radio" /> D. Der einfache Weg</td>
+                    <td class="opt"><input name="q2" type="radio" /> C. Wie kann es möglich sein?</td>
+                    <td class="opt"><input name="q2" type="radio" /> D. Der einfache Weg</td>
                 </tr>
             </table>
             <table id="quiz3" border="1" hidden>
-                <caption>_</caption>
+                <caption>3</caption>
                 <tr>
                     <td colspan="2">
-                        <img class="quizPic" src="src/03.jpg" />
+                        <img class="quizPic" src="src/03.jpg" /><br />
                         <audio src="src/03.mp3" controls></audio>
                     </td>
                 </tr>
                 <tr>
-                    <td id="3a" class="opt"><input id="3a" name="q3" type="radio" /> A. Rebecca (Reprise)</td>
-                    <td id="3b" class="opt"><input id="3b" name="q3" type="radio" /> B. Wenn ich tanzen will</td>
+                    <td class="opt"><input name="q3" type="radio" /> A. Jenseits der Nacht</td>
+                    <td class="opt"><input name="q3" type="radio" /> B. Wenn ich tanzen will</td>
                 </tr>
                 <tr>
-                    <td id="3c" class="opt"><input id="3c" name="q3" type="radio" /> C. Jenseits der Nacht</td>
-                    <td id="3d" class="opt"><input id="3d" name="q3" type="radio" /> D. Der Schleier fällt</td>
+                    <td class="opt"><input name="q3" type="radio" /> C. Hilf mir durch die Nacht</td>
+                    <td class="opt"><input name="q3" type="radio" /> D. Der Schleier fällt</td>
                 </tr>
             </table>
             <table id="quiz4" border="1" hidden>
-                <caption>_</caption>
+                <caption>4</caption>
                 <tr>
                     <td colspan="2">
-                        <img class="quizPic" src="src/04.jpg" />
+                        <img class="quizPic" src="src/04.jpg" /><br />
                         <audio src="src/04.mp3" controls></audio>
                     </td>
                 </tr>
                 <tr>
-                    <td id="4a" class="opt"><input id="4a" name="q4" type="radio" /> A. Die Schatten werden länger (Reprise)</td>
-                    <td id="4b" class="opt"><input id="4b" name="q4" type="radio" /> B. Ich bin, ich bin Musik</td>
+                    <td class="opt"><input name="q4" type="radio" /> A. Die Schatten werden länger (Reprise)</td>
+                    <td class="opt"><input name="q4" type="radio" /> B. Ich bin, ich bin Musik</td>
                 </tr>
                 <tr>
-                    <td id="4c" class="opt"><input id="4c" name="q4" type="radio" /> C. Wenn ich dein Spiegel wär</td>
-                    <td id="4d" class="opt"><input id="4d" name="q4" type="radio" /> D. Wie wird man seinen Schatten los?</td>
+                    <td class="opt"><input name="q4" type="radio" /> C. Wenn ich dein Spiegel wär</td>
+                    <td class="opt"><input name="q4" type="radio" /> D. Wie wird man seinen Schatten los?</td>
                 </tr>
             </table>
             <table id="quiz5" border="1" hidden>
-                <caption>_</caption>
+                <caption>5</caption>
                 <tr>
                     <td colspan="2">
-                        <img class="quizPic" src="src/05.jpg" />
+                        <img class="quizPic" src="src/05.jpg" /><br />
                         <audio src="src/05.mp3" controls></audio>
                     </td>
                 </tr>
                 <tr>
-                    <td id="5a" class="opt"><input id="5a" name="q5" type="radio" /> A. Ich gehör nur mir</td>
-                    <td id="5b" class="opt"><input id="5b" name="q5" type="radio" /> B. Der letzte Tanz</td>
+                    <td class="opt"><input name="q5" type="radio" /> A. Ich gehör nur mir</td>
+                    <td class="opt"><input name="q5" type="radio" /> B. Der letzte Tanz</td>
                 </tr>
                 <tr>
-                    <td id="5c" class="opt"><input id="5c" name="q5" type="radio" /> C. Irgendwo wird immer getanzt</td>
-                    <td id="5d" class="opt"><input id="5d" name="q5" type="radio" /> D. Rebecca (Reprise)</td>
+                    <td class="opt"><input name="q5" type="radio" /> C. Irgendwo wird immer getanzt</td>
+                    <td class="opt"><input name="q5" type="radio" /> D. Rebecca (Reprise)</td>
+                </tr>
+            </table>
+            <table id="quiz6" border="1" hidden>
+                <caption>6</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/06.jpg" /><br />
+                        <audio src="src/06.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q6" type="radio" /> A. Ich gehör nur mir</td>
+                    <td class="opt"><input name="q6" type="radio" /> B. Der Schleier fällt</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q6" type="radio" /> C. Prolog (Alle tanzten mit dem Tod)</td>
+                    <td class="opt"><input name="q6" type="radio" /> D. Elisabeth, mach auf mein Engel</td>
+                </tr>
+            </table>
+            <table id="quiz7" border="1" hidden>
+                <caption>7</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/07.jpg" /><br />
+                        <audio src="src/07.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q7" type="radio" /> A. Rudolf, wo bist du?</td>
+                    <td class="opt"><input name="q7" type="radio" /> B. Boote in der Nacht</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q7" type="radio" /> C. Wenn ich dein Spiegel wär</td>
+                    <td class="opt"><input name="q7" type="radio" /> D. Ich gehör nur mir</td>
+                </tr>
+            </table>
+            <table id="quiz8" border="1" hidden>
+                <caption>8</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/08.jpg" /><br />
+                        <audio src="src/08.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q8" type="radio" /> A. Mozart, Mozart!</td>
+                    <td class="opt"><input name="q8" type="radio" /> B. Ich bin, ich bin Musik</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q8" type="radio" /> C. Warum kannst du mich nicht lieben?</td>
+                    <td class="opt"><input name="q8" type="radio" /> D. Der Prinz ist fort</td>
+                </tr>
+            </table>
+            <table id="quiz9" border="1" hidden>
+                <caption>9</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/09.jpg" /><br />
+                        <audio src="src/09.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q9" type="radio" /> A. Hier in Wien!</td>
+                    <td class="opt"><input name="q9" type="radio" /> B. Was für ein Kind!</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q9" type="radio" /> C. Ich bin extraordinär</td>
+                    <td class="opt"><input name="q9" type="radio" /> D. Mozart, Mozart!</td>
+                </tr>
+            </table>
+            <table id="quiz10" border="1" hidden>
+                <caption>10</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/10.jpg" /><br />
+                        <audio src="src/10.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q10" type="radio" /> A. Mozarts Tod</td>
+                    <td class="opt"><input name="q10" type="radio" /> B. Wie wird man seinen Schatten los?</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q10" type="radio" /> C. Papa ist tot</td>
+                    <td class="opt"><input name="q10" type="radio" /> D. Was für ein grausames Leben</td>
+                </tr>
+            </table>
+            <table id="quiz11" border="1" hidden>
+                <caption>11</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/11.jpg" /><br />
+                        <audio src="src/11.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q11" type="radio" /> A. Gott, warum?</td>
+                    <td class="opt"><input name="q11" type="radio" /> B. Der Ball von Manderley</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q11" type="radio" /> C. Ich hab geträumt von Manderley (Reprise)</td>
+                    <td class="opt"><input name="q11" type="radio" /> D. Ich hab geträumt von Manderley</td>
+                </tr>
+            </table>
+            <table id="quiz12" border="1" hidden>
+                <caption>12</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/12.jpg" /><br />
+                        <audio src="src/12.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q12" type="radio" /> A. Ohne Sie</td>
+                    <td class="opt"><input name="q12" type="radio" /> B. Wir sind Eins</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q12" type="radio" /> C. Einmal</td>
+                    <td class="opt"><input name="q12" type="radio" /> D. Heut ist ein großer Tag</td>
+                </tr>
+            </table>
+            <table id="quiz13" border="1" hidden>
+                <caption>13</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/13.jpg" /><br />
+                        <audio src="src/13.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q13" type="radio" /> A. Du bleibst bei mir!</td>
+                    <td class="opt"><input name="q13" type="radio" /> B. Die Fäden in der Hand</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q13" type="radio" /> C. Ungeheuerlich!</td>
+                    <td class="opt"><input name="q13" type="radio" /> D. Vergiss es!</td>
+                </tr>
+            </table>
+            <table id="quiz14" border="1" hidden>
+                <caption>14</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/14.jpg" /><br />
+                        <audio src="src/14.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q14" type="radio" /> A. Wärst du heute hier</td>
+                    <td class="opt"><input name="q14" type="radio" /> B. Boote in der Nacht</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q14" type="radio" /> C. Weisst du noch?</td>
+                    <td class="opt"><input name="q14" type="radio" /> D. Zeit in einer Flasche</td>
+                </tr>
+            </table>
+            <table id="quiz15" border="1" hidden>
+                <caption>15</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/15.jpg" /><br />
+                        <audio src="src/15.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q15" type="radio" /> A. Hölle auf Erden</td>
+                    <td class="opt"><input name="q15" type="radio" /> B. Sünden der Väter</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q15" type="radio" /> C. Geschichte</td>
+                    <td class="opt"><input name="q15" type="radio" /> D. Zu Ende</td>
+                </tr>
+            </table>
+            <table id="quiz16" border="1" hidden>
+                <caption>16</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/16.jpg" /><br />
+                        <audio src="src/16.m4a" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q16" type="radio" /> A. Eh du verloren bist</td>
+                    <td class="opt"><input name="q16" type="radio" /> B. Die ruhmreiche Schlacht</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q16" type="radio" /> C. Der Weg in die Zukunft</td>
+                    <td class="opt"><input name="q16" type="radio" /> D. Der Mann ist tot</td>
+                </tr>
+            </table>
+            <table id="quiz17" border="1" hidden>
+                <caption>17</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/17.jpg" /><br />
+                        <audio src="src/17.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q17" type="radio" /> A. Kalte Sterne</td>
+                    <td class="opt"><input name="q17" type="radio" /> B. Wenn ich dein Spiegel wär</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q17" type="radio" /> C. Nur sie allein</td>
+                    <td class="opt"><input name="q17" type="radio" /> D. Roseanne</td>
+                </tr>
+            </table>
+
+
+
+
+
+
+
+
+            <table id="quiz31" border="1" hidden>
+                <caption>31</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/31.jpg" /><br />
+                        <audio src="src/31.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q31" type="radio" /> A. Ein wenig Farbe</td>
+                    <td class="opt"><input name="q31" type="radio" /> B. Wie Du</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q31" type="radio" /> C. In Meiner Welt</td>
+                    <td class="opt"><input name="q31" type="radio" /> D. Ich bin extraordinär</td>
+                </tr>
+            </table>
+            <table id="quiz32" border="1" hidden>
+                <caption>32</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/32.jpg" /><br />
+                        <audio src="src/32.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q32" type="radio" /> A. Du bleibst bei mir</td>
+                    <td class="opt"><input name="q32" type="radio" /> B. Milady ist zurück</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q32" type="radio" /> C. Rebecca (Reprise)</td>
+                    <td class="opt"><input name="q32" type="radio" /> D. Die Welt gehört mir</td>
+                </tr>
+            </table>
+            <table id="quiz33" border="1" hidden>
+                <caption>33</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/33.jpg" /><br />
+                        <audio src="src/33.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q33" type="radio" /> A. Ich will dir nur sagen</td>
+                    <td class="opt"><input name="q33" type="radio" /> B. Nichts, nichts, gar nichts</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q33" type="radio" /> C. Einladung zum Ball</td>
+                    <td class="opt"><input name="q33" type="radio" /> D. Ich gehör' nur mir</td>
+                </tr>
+            </table>
+            <table id="quiz34" border="1" hidden>
+                <caption>34</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/34.jpg" /><br />
+                        <audio src="src/34.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q34" type="radio" /> A. Nicht aus Stein</td>
+                    <td class="opt"><input name="q34" type="radio" /> B. Totale Finsternis</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q34" type="radio" /> C. Die unstillbare Gier</td>
+                    <td class="opt"><input name="q34" type="radio" /> D. Gott ist tot</td>
+                </tr>
+            </table>
+            <table id="quiz35" border="1" hidden>
+                <caption>35</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/35.jpg" /><br />
+                        <audio src="src/35.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q35" type="radio" /> A. Einmal</td>
+                    <td class="opt"><input name="q35" type="radio" /> B. Liebe</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q35" type="radio" /> C. Draußen ist Freiheit</td>
+                    <td class="opt"><input name="q35" type="radio" /> D. Für Sarah</td>
+                </tr>
+            </table>
+            <table id="quiz36" border="1" hidden>
+                <caption>36</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/36.jpg" /><br />
+                        <audio src="src/36.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q36" type="radio" /> A. In dem Moment als ich Dich sah</td>
+                    <td class="opt"><input name="q36" type="radio" /> B. Du bist meine Welt</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q36" type="radio" /> C. Was ist nur los mit ihm?</td>
+                    <td class="opt"><input name="q36" type="radio" /> D. Die Letzte Nacht der Welt</td>
+                </tr>
+            </table>
+            <table id="quiz37" border="1" hidden>
+                <caption>37</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/37.jpg" /><br />
+                        <audio src="src/17.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q37" type="radio" /> A. Nichts ist schwer</td>
+                    <td class="opt"><input name="q37" type="radio" /> B. Liebe endet nie</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q37" type="radio" /> C. Dich kennen heißt Dich lieben</td>
+                    <td class="opt"><input name="q37" type="radio" /> D. Im Sturm der Liebe</td>
+                </tr>
+            </table>
+            <table id="quiz38" border="1" hidden>
+                <caption>38</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/38.jpg" /><br />
+                        <audio src="src/38.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q38" type="radio" /> A. O Herr</td>
+                    <td class="opt"><input name="q38" type="radio" /> B. Alles ist vorbei</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q38" type="radio" /> C. Gott, warum?</td>
+                    <td class="opt"><input name="q38" type="radio" /> D. Mein Gott, warum?</td>
+                </tr>
+            </table>
+            <table id="quiz39" border="1" hidden>
+                <caption>39</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/39.jpg" /><br />
+                        <audio src="src/39.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q39" type="radio" /> A. Kitsch</td>
+                    <td class="opt"><input name="q39" type="radio" /> B. An Deck der sinkenden Welt</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q39" type="radio" /> C. Alle Fragen sind gestellt</td>
+                    <td class="opt"><input name="q39" type="radio" /> D. Mayerling-Walzer</td>
+                </tr>
+            </table>
+            <table id="quiz40" border="1" hidden>
+                <caption>40</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/40.jpg" /><br />
+                        <audio src="src/40.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q40" type="radio" /> A. Sie ergibt sich nicht</td>
+                    <td class="opt"><input name="q40" type="radio" /> B. Zeit in einer Flasche</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q40" type="radio" /> C. Was ist nur los mit ihm?</td>
+                    <td class="opt"><input name="q40" type="radio" /> D. Eine Kaiserin muss glänzen</td>
+                </tr>
+            </table>
+            <table id="quiz41" border="1" hidden>
+                <caption>41</caption>
+                <tr>
+                    <td colspan="2">
+                        <img class="quizPic" src="src/41.jpg" /><br />
+                        <audio src="src/41.mp3" controls></audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q41" type="radio" /> A. Manderley in Flammen</td>
+                    <td class="opt"><input name="q41" type="radio" /> B. Kein Lächeln war je so kalt</td>
+                </tr>
+                <tr>
+                    <td class="opt"><input name="q41" type="radio" /> C. Die Voruntersuchung</td>
+                    <td class="opt"><input name="q41" type="radio" /> D. Gott, warum?</td>
                 </tr>
             </table>
             <br />
             <button id="buttonPrevious" type="button" onclick="showPrevious();" hidden>Previous</button>
+            <span id="page"> 1/5 </span>
             <button id="buttonNext" type="button" onclick="showNext();">Next</button>
             <button id="quizSubmit" type="submit" hidden>Submit</button>
         </form>
     </div>
     <script>
         document.getElementById(idList[chosenList[0]]).hidden = false;   //顯示抽到的第一題
+        document.getElementById("page").innerText = " 1/" + chosenNum + " ";   //顯示第一題頁數
     </script>
 </body>
 </html>

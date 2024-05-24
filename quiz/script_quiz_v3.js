@@ -9,8 +9,17 @@ function reopenQuiz() {
     window.open("quiz_play_v3.html", "_self");
 }
 
-var ansList = [1, 2, 2, 3, 1];   //正確答案
 var question = 0;   //現在在第幾題
+var ansList = [   //正確答案
+    1, 2, 2, 3, 1,   //~5
+    1, 2, 2, 0, 3,   //~10
+    3, 1, 1, 2, 3,   //~15
+    1, 0];   //~20
+       //~25
+       //~30
+    //0, 2, 3, 2, 3,   //~35
+    //1, 1, 0, 2, 0,   //~40
+    //3];
 
 var idList = [];   //存table的id
 for (var i = 1; i <= ansList.length; i++) {
@@ -28,11 +37,13 @@ for (var i = 0; i < chosenNum; i++) {   //隨機抽題號
 }
 
 //document.getElementById(idList[chosenList[0]]).hidden = false;   //顯示抽到的第一題 (已放到body最後)
+//document.getElementById("page").innerText = " 1/" + chosenNum + " ";   //顯示第一題頁數 (已放到body最後)
 
 function showPrevious() {
     document.getElementById(idList[chosenList[question]]).hidden = true;   //隱藏下一題
 
     question--;
+    document.getElementById("page").innerText = " " + (question + 1) + "/" + chosenNum + " ";
     document.getElementById(idList[chosenList[question]]).hidden = false;   //顯示上一題
     window.location.hash = "#" + idList[chosenList[question]];   //移動至上一題的位置
 
@@ -51,10 +62,11 @@ function showNext() {   //顯示下一題
         alert("Please select an answer.");
         return;
     }
-
+    
     document.getElementById(idList[chosenList[question]]).hidden = true;   //隱藏上一題
 
     question++;
+    document.getElementById("page").innerText = " " + (question + 1) + "/" + chosenNum + " ";
     document.getElementById(idList[chosenList[question]]).hidden = false;   //顯示下一題
     window.location.hash = "#" + idList[chosenList[question]];   //移動至下一題的位置
 
@@ -82,12 +94,12 @@ function calcScore() {   //計算成績
         return;
     }
 
-    //var your_ans = [];  //使用者的選項(array)
-    var your_ans = "";  //使用者的選項(string)
+    //var your_ans = [];   //使用者的選項(array)
+    var your_ans = "";   //使用者的選項(string)
     var correct_ans = "";   //正確選項(string)
     var score = 0;
 
-    for (var i = 0; i < chosenNum; i++) {  //第i題
+    for (var i = 0; i < chosenNum; i++) {   //第i題
         var ans = document.forms["quiz"].elements["q" + (chosenList[i] + 1)];
         correct_ans += ans[ansList[chosenList[i]]].nextSibling.nodeValue.trim() + "^";   //存正確選項的文字
         for (var j = 0; j < ans.length; j++) {   //第j個選項
@@ -100,8 +112,8 @@ function calcScore() {   //計算成績
             }
         }
     }
-    your_ans = your_ans.slice(0, -1); // 移除最後一個^
-    correct_ans = correct_ans.slice(0, -1); // 移除最後一個^
+    your_ans = your_ans.slice(0, -1);   // 移除最後一個^
+    correct_ans = correct_ans.slice(0, -1);   // 移除最後一個^
 
     //array版(用alert)
     /*if (your_ans.length > 0) {
@@ -169,11 +181,11 @@ function showResult() {   //成績顯示
             numberCell.style.backgroundColor = "rgba(255, 0, 0, 0.4)";
             yourAnsCell.style.backgroundColor = "rgba(255, 0, 0, 0.4)";
             correctAnsCell.style.backgroundColor = "rgba(255, 0, 0, 0.4)";
-        } else {
-            //numberCell.style.backgroundColor = "rgba(0, 255, 0, 0.3)";
-            //yourAnsCell.style.backgroundColor = "rgba(0, 255, 0, 0.3)";
-            //correctAnsCell.style.backgroundColor = "rgba(0, 255, 0, 0.3)";
-        }
+        } /*else {
+            numberCell.style.backgroundColor = "rgba(0, 255, 0, 0.3)";
+            yourAnsCell.style.backgroundColor = "rgba(0, 255, 0, 0.3)";
+            correctAnsCell.style.backgroundColor = "rgba(0, 255, 0, 0.3)";
+        }*/
     }
 }
 
