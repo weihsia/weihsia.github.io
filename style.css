@@ -57,9 +57,7 @@ td.opt {   /*quiz選項格*/
 
 img {
     max-width: 100%;
-}img.quizPic {
-     height: 360px;
- }
+}
 
 button { /*一般按鈕*/
     width: 100px;
