@@ -9,8 +9,8 @@ function reopenQuiz() {
     window.open("quiz_play_v3.html", "_self");
 }
 
-var question = 0;   //²{¦b¦b²Ä´XÃD
-var ansList = [   //¥¿½Tµª®×
+var question = 0;   //ç¾åœ¨åœ¨ç¬¬å¹¾é¡Œ
+var ansList = [   //æ­£ç¢ºç­”æ¡ˆ
     1, 2, 2, 3, 1,   //~5
     1, 2, 2, 0, 3,   //~10
     3, 1, 1, 2, 3,   //~15
@@ -21,14 +21,14 @@ var ansList = [   //¥¿½Tµª®×
     //1, 1, 0, 2, 0,   //~40
     //3];
 
-var idList = [];   //¦stableªºid
+var idList = [];   //å­˜tableçš„id
 for (var i = 1; i <= ansList.length; i++) {
     idList[i - 1] = "quiz" + i;
 }
 
-var chosenNum = 5;   //©â´XÃD
-var chosenList = [];   //¦s©â¥X¨ÓªºÃD¸¹
-for (var i = 0; i < chosenNum; i++) {   //ÀH¾÷©âÃD¸¹
+var chosenNum = 17;   //æŠ½å¹¾é¡Œ
+var chosenList = [];   //å­˜æŠ½å‡ºä¾†çš„é¡Œè™Ÿ
+for (var i = 0; i < chosenNum; i++) {   //éš¨æ©ŸæŠ½é¡Œè™Ÿ
     var num;
     do {
         num = Math.ceil(Math.random() * ansList.length) - 1;
@@ -36,45 +36,45 @@ for (var i = 0; i < chosenNum; i++) {   //ÀH¾÷©âÃD¸¹
     chosenList[i] = num;
 }
 
-//document.getElementById(idList[chosenList[0]]).hidden = false;   //Åã¥Ü©â¨ìªº²Ä¤@ÃD (¤w©ñ¨ìbody³Ì«á)
-//document.getElementById("page").innerText = " 1/" + chosenNum + " ";   //Åã¥Ü²Ä¤@ÃD­¶¼Æ (¤w©ñ¨ìbody³Ì«á)
+//document.getElementById(idList[chosenList[0]]).hidden = false;   //é¡¯ç¤ºæŠ½åˆ°çš„ç¬¬ä¸€é¡Œ (å·²æ”¾åˆ°bodyæœ€å¾Œ)
+//document.getElementById("page").innerText = " 1/" + chosenNum + " ";   //é¡¯ç¤ºç¬¬ä¸€é¡Œé æ•¸ (å·²æ”¾åˆ°bodyæœ€å¾Œ)
 
 function showPrevious() {
-    document.getElementById(idList[chosenList[question]]).hidden = true;   //ÁôÂÃ¤U¤@ÃD
+    document.getElementById(idList[chosenList[question]]).hidden = true;   //éš±è—ä¸‹ä¸€é¡Œ
 
     question--;
     document.getElementById("page").innerText = " " + (question + 1) + "/" + chosenNum + " ";
-    document.getElementById(idList[chosenList[question]]).hidden = false;   //Åã¥Ü¤W¤@ÃD
-    window.location.hash = "#" + idList[chosenList[question]];   //²¾°Ê¦Ü¤W¤@ÃDªº¦ì¸m
+    document.getElementById(idList[chosenList[question]]).hidden = false;   //é¡¯ç¤ºä¸Šä¸€é¡Œ
+    window.location.hash = "#" + idList[chosenList[question]];   //ç§»å‹•è‡³ä¸Šä¸€é¡Œçš„ä½ç½®
 
-    if (question == 0) {   //¦^¨ì²Ä¤@ÃD
+    if (question == 0) {   //å›åˆ°ç¬¬ä¸€é¡Œ
         document.getElementById("buttonPrevious").hidden = true;
     }
 
-    if (question != chosenNum - 1) {   //¤£¦b³Ì«á¤@ÃD
+    if (question != chosenNum - 1) {   //ä¸åœ¨æœ€å¾Œä¸€é¡Œ
         document.getElementById("buttonNext").hidden = false;
         document.getElementById("quizSubmit").hidden = true;
     }
 }
 
-function showNext() {   //Åã¥Ü¤U¤@ÃD
+function showNext() {   //é¡¯ç¤ºä¸‹ä¸€é¡Œ
     if (!checkAnswered()) {
         alert("Please select an answer.");
         return;
     }
     
-    document.getElementById(idList[chosenList[question]]).hidden = true;   //ÁôÂÃ¤W¤@ÃD
+    document.getElementById(idList[chosenList[question]]).hidden = true;   //éš±è—ä¸Šä¸€é¡Œ
 
     question++;
     document.getElementById("page").innerText = " " + (question + 1) + "/" + chosenNum + " ";
-    document.getElementById(idList[chosenList[question]]).hidden = false;   //Åã¥Ü¤U¤@ÃD
-    window.location.hash = "#" + idList[chosenList[question]];   //²¾°Ê¦Ü¤U¤@ÃDªº¦ì¸m
+    document.getElementById(idList[chosenList[question]]).hidden = false;   //é¡¯ç¤ºä¸‹ä¸€é¡Œ
+    window.location.hash = "#" + idList[chosenList[question]];   //ç§»å‹•è‡³ä¸‹ä¸€é¡Œçš„ä½ç½®
 
-    if (question > 0) {   //¦b²Ä¤GÃD©Î¥H¤W
+    if (question > 0) {   //åœ¨ç¬¬äºŒé¡Œæˆ–ä»¥ä¸Š
         document.getElementById("buttonPrevious").hidden = false;
     }
 
-    if (question == chosenNum - 1) {   //¦b³Ì«á¤@ÃD
+    if (question == chosenNum - 1) {   //åœ¨æœ€å¾Œä¸€é¡Œ
         document.getElementById("buttonNext").hidden = true;
         document.getElementById("quizSubmit").hidden = false;
     }
@@ -88,86 +88,86 @@ function checkAnswered() {
     return false;
 }
 
-function calcScore() {   //­pºâ¦¨ÁZ
-    if (!checkAnswered()) {   //¤â°ÊÀË¬d³Ì«á¤@ÃD
+function calcScore() {   //è¨ˆç®—æˆç¸¾
+    if (!checkAnswered()) {   //æ‰‹å‹•æª¢æŸ¥æœ€å¾Œä¸€é¡Œ
         alert("Please select an answer.");
         return;
     }
 
-    //var your_ans = [];   //¨Ï¥ÎªÌªº¿ï¶µ(array)
-    var your_ans = "";   //¨Ï¥ÎªÌªº¿ï¶µ(string)
-    var correct_ans = "";   //¥¿½T¿ï¶µ(string)
+    //var your_ans = [];   //ä½¿ç”¨è€…çš„é¸é …(array)
+    var your_ans = "";   //ä½¿ç”¨è€…çš„é¸é …(string)
+    var correct_ans = "";   //æ­£ç¢ºé¸é …(string)
     var score = 0;
 
-    for (var i = 0; i < chosenNum; i++) {   //²ÄiÃD
+    for (var i = 0; i < chosenNum; i++) {   //ç¬¬ié¡Œ
         var ans = document.forms["quiz"].elements["q" + (chosenList[i] + 1)];
-        correct_ans += ans[ansList[chosenList[i]]].nextSibling.nodeValue.trim() + "^";   //¦s¥¿½T¿ï¶µªº¤å¦r
-        for (var j = 0; j < ans.length; j++) {   //²Äj­Ó¿ï¶µ
+        correct_ans += ans[ansList[chosenList[i]]].nextSibling.nodeValue.trim() + "^";   //å­˜æ­£ç¢ºé¸é …çš„æ–‡å­—
+        for (var j = 0; j < ans.length; j++) {   //ç¬¬jå€‹é¸é …
             if (ans[j].checked) {
-                //your_ans.push(ans[j].nextSibling.nodeValue.trim());   //arrayª©
-                your_ans += ans[j].nextSibling.nodeValue.trim() + "^";   //stringª©
-                if (j == ansList[chosenList[i]]) {   //µª¹ï
+                //your_ans.push(ans[j].nextSibling.nodeValue.trim());   //arrayç‰ˆ
+                your_ans += ans[j].nextSibling.nodeValue.trim() + "^";   //stringç‰ˆ
+                if (j == ansList[chosenList[i]]) {   //ç­”å°
                     score++;
                 }
             }
         }
     }
-    your_ans = your_ans.slice(0, -1);   // ²¾°£³Ì«á¤@­Ó^
-    correct_ans = correct_ans.slice(0, -1);   // ²¾°£³Ì«á¤@­Ó^
+    your_ans = your_ans.slice(0, -1);   // ç§»é™¤æœ€å¾Œä¸€å€‹^
+    correct_ans = correct_ans.slice(0, -1);   // ç§»é™¤æœ€å¾Œä¸€å€‹^
 
-    //arrayª©(¥Îalert)
+    //arrayç‰ˆ(ç”¨alert)
     /*if (your_ans.length > 0) {
         alert("Score: " + score + "/" + chosenList.length + "\n\nYour answers:\n" + your_ans.join("\n"));
     } else {
         alert("Congratulations! You got all questions right!");
     }*/
 
-    //stringª©(°e¨ì¦¨ÁZ­¶­±)
-    location.href = "quiz_result_v3.html?score=" + score + "&t_score=" + chosenList.length + "&your_ans=" + your_ans + "&correct_ans=" + correct_ans;   //¥´¶}¦¨ÁZ­¶­±¡B¶Ç°e±o¤À»PÁ`¤À
+    //stringç‰ˆ(é€åˆ°æˆç¸¾é é¢)
+    location.href = "quiz_result_v3.html?score=" + score + "&t_score=" + chosenList.length + "&your_ans=" + your_ans + "&correct_ans=" + correct_ans;   //æ‰“é–‹æˆç¸¾é é¢ã€å‚³é€å¾—åˆ†èˆ‡ç¸½åˆ†
 }
 
-function generateTable() {   //®Ú¾ÚÃD¼Æ¥Í¦¨¬Û¹ïªí®æ¦æ¼Æ
-    // Àò¨úªí®æ¤¸¯À
+function generateTable() {   //æ ¹æ“šé¡Œæ•¸ç”Ÿæˆç›¸å°è¡¨æ ¼è¡Œæ•¸
+    // ç²å–è¡¨æ ¼å…ƒç´ 
     const table = document.getElementById('resultTable');
      
     for (let i = 1; i <= chosenNum; i++) {
-        // ³Ğ«Ø·sªº¦æ
+        // å‰µå»ºæ–°çš„è¡Œ
         const row = document.createElement('tr');
 
-        // ³Ğ«Ø©M²K¥[#¦C
+        // å‰µå»ºå’Œæ·»åŠ #åˆ—
         const numCell = document.createElement('td');
         numCell.id = `num${i}`;
         numCell.textContent = i;
         row.appendChild(numCell);
 
-        // ³Ğ«Ø©M²K¥[Your Answer¦C
+        // å‰µå»ºå’Œæ·»åŠ Your Answeråˆ—
         const yourAnsCell = document.createElement('td');
         yourAnsCell.className = 'res';
         yourAnsCell.id = `yourAns${i}`;
         row.appendChild(yourAnsCell);
 
-        // ³Ğ«Ø©M²K¥[Correct Answer¦C
+        // å‰µå»ºå’Œæ·»åŠ Correct Answeråˆ—
         const correctAnsCell = document.createElement('td');
         correctAnsCell.className = 'res';
         correctAnsCell.id = `correctAns${i}`;
         row.appendChild(correctAnsCell);
 
-        // ±N¦æ²K¥[¨ìªí®æ
+        // å°‡è¡Œæ·»åŠ åˆ°è¡¨æ ¼
         table.appendChild(row);
     }
 }
 
-function showResult() {   //¦¨ÁZÅã¥Ü
-    var dataFromCalc = window.location.search.substr(1);   //substr(1): ±qlocationªº²Ä¤G­Ó¤¸¯À¶}©lÅª¨ú
+function showResult() {   //æˆç¸¾é¡¯ç¤º
+    var dataFromCalc = window.location.search.substr(1);   //substr(1): å¾locationçš„ç¬¬äºŒå€‹å…ƒç´ é–‹å§‹è®€å–
     var urlParams = new URLSearchParams(dataFromCalc);
 
     var score = urlParams.get("score");
     var t_score = urlParams.get("t_score");
-    var your_ans = urlParams.get("your_ans").split("^");   //stringÂàarray
-    var correct_ans = urlParams.get("correct_ans").split("^");   //stringÂàarray
+    var your_ans = urlParams.get("your_ans").split("^");   //stringè½‰array
+    var correct_ans = urlParams.get("correct_ans").split("^");   //stringè½‰array
 
-    document.getElementById("scr").innerText = score;   //Åã¥Ü±o¤À
-    document.getElementById("t_scr").innerText = t_score;   //Åã¥ÜÁ`¤À
+    document.getElementById("scr").innerText = score;   //é¡¯ç¤ºå¾—åˆ†
+    document.getElementById("t_scr").innerText = t_score;   //é¡¯ç¤ºç¸½åˆ†
 
     for (var i = 0; i < chosenNum; i++) {
         var numberCell = document.getElementById(`num${i + 1}`);
