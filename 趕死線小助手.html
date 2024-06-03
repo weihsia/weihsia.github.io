@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>趕死線小助手</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="tabs">
+        <h2>趕死線小助手</h2>
+        <ul>
+            <li><a href="#tab1">By words</a></li>
+            <li><a href="#tab2">By pages</a></li>
+        </ul>
+
+        <div id="tab1">
+            <form id="wordCountForm">
+                <label for="totalWords">所需字數：</label>
+                <input type="number" id="totalWords" required value="0"><br><br>
+                <label for="completedWords">已寫字數：</label>
+                <input type="number" id="completedWords" required value="0"><br><br>
+                <label for="deadlineWord">Deadline: </label>
+                <input type="datetime-local" id="deadlineWord" required value="2256-01-27T12:05"><br><br>
+            </form>
+            <hr />
+            <br />
+            <div id="resultWord"></div>
+        </div>
+
+        <div id="tab2">
+            <form id="pageCountForm">
+                <label for="totalPages">所需頁數：</label>
+                <input type="number" id="totalPages" required value="0"><br><br>
+                <label for="completedPages">已寫頁數：</label>
+                <input type="number" id="completedPages" required value="0"><br><br>
+                <label for="deadlinePage">Deadline: </label>
+                <input type="datetime-local" id="deadlinePage" required value="2256-01-27T12:05"><br><br>
+            </form>
+            <hr />
+            <br />
+            <div id="resultPage"></div>
+        </div>
+    </div>
+
+    <script>
+        $('#tabs').tabs();
+        
+        function calculateWords() {
+            var totalWords = parseInt(document.getElementById("totalWords").value);
+            var completedWords = parseInt(document.getElementById("completedWords").value);
+            var deadline = new Date(document.getElementById("deadlineWord").value);
+
+            if (totalWords == completedWords) {
+                document.getElementById("resultWord").innerHTML = "";
+                return;
+            }
+
+            var now = new Date();
+            var timeDifference = deadline - now;
+
+            if (timeDifference <= 0) {
+                document.getElementById("resultWord").innerHTML = "<h1>YOU'RE SCREWED.</h1>";
+                return;
+            }
+
+            var remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            var remainingHours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var remainingMinutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            var remainingSeconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            var remainingTime = Math.floor(timeDifference / 1000);
+            var wordsPerHour = ((totalWords - completedWords) / remainingTime);
+
+            var result = "距離截止時間還有：";
+            if (remainingDays > 0) {
+                result += remainingDays + " 天 " + remainingHours + " 小時 " + remainingMinutes + " 分鐘 " + remainingSeconds + " 秒<br>";
+                wordsPerHour = wordsPerHour * 3600;
+                result += "平均每小時還需寫：" + wordsPerHour.toFixed(1) + " 字";
+            }
+            else if (remainingHours > 0) {
+                result += remainingHours + " 小時 " + remainingMinutes + " 分鐘 " + remainingSeconds + " 秒<br>";
+                wordsPerHour = wordsPerHour * 3600;
+                result += "平均每小時還需寫：" + wordsPerHour.toFixed(1) + " 字";
+            }
+            else if (remainingMinutes > 0) {
+                result += remainingMinutes + " 分鐘 " + remainingSeconds + " 秒<br>";
+                wordsPerHour = wordsPerHour * 60;
+                result += "平均每分鐘還需寫：" + wordsPerHour.toFixed(1) + " 字";
+            }
+            else {
+                result = "<h1>YOU'RE SCREWED.</h1>";
+            }
+
+            document.getElementById("resultWord").innerHTML = result;
+        }
+
+        function calculatePages() {
+            var totalPages = parseInt(document.getElementById("totalPages").value);
+            var completedPages = parseInt(document.getElementById("completedPages").value);
+            var deadline = new Date(document.getElementById("deadlinePage").value);
+
+            if (totalPages == completedPages) {
+                document.getElementById("resultPage").innerHTML = "";
+                return;
+            }
+
+            var now = new Date();
+            var timeDifference = deadline - now;
+
+            if (timeDifference <= 0) {
+                document.getElementById("resultPage").innerHTML = "<h1>YOU'RE SCREWED.</h1>";
+                return;
+            }
+
+            var remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            var remainingHours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var remainingMinutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            var remainingSeconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            var remainingTime = Math.floor(timeDifference / 1000);
+            var pagesPerHour = ((totalPages - completedPages) / remainingTime);
+
+            var result = "距離截止時間還有：";
+            if (remainingDays > 0) {
+                result += remainingDays + " 天 " + remainingHours + " 小時 " + remainingMinutes + " 分鐘 " + remainingSeconds + " 秒<br>";
+                pagesPerHour = pagesPerHour * 3600;
+                result += "平均每小時還需寫：" + pagesPerHour.toFixed(1) + " 頁";
+            }
+            else if (remainingHours > 0) {
+                result += remainingHours + " 小時 " + remainingMinutes + " 分鐘 " + remainingSeconds + " 秒<br>";
+                pagesPerHour = pagesPerHour * 3600;
+                result += "平均每小時還需寫：" + pagesPerHour.toFixed(1) + " 頁";
+            }
+            else if (remainingMinutes > 0) {
+                result += remainingMinutes + " 分鐘 " + remainingSeconds + " 秒<br>";
+                pagesPerHour = pagesPerHour * 60;
+                result += "平均每分鐘還需寫：" + pagesPerHour.toFixed(1) + " 頁";
+            }
+            else {
+                result = "<h1>YOU'RE SCREWED.</h1>";
+            }
+
+            document.getElementById("resultPage").innerHTML = result;
+        }
+
+        setInterval(calculateWords, 500); // 每0.5秒更新一次計算結果
+        setInterval(calculatePages, 500); // 每0.5秒更新一次計算結果
+    </script>
+</body>
+</html>
