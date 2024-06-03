@@ -6,52 +6,45 @@
     <title>趕死線小助手</title>
 </head>
 <body>
-        <h2>趕死線小助手</h2>
+    <h2>趕死線小助手</h2>
 
-        <div id="tab1">
-            <form id="wordCountForm">
-                <label for="totalWords">所需字數：</label>
-                <input type="number" id="totalWords" required value="0"><br><br>
-                <label for="completedWords">已寫字數：</label>
-                <input type="number" id="completedWords" required value="0"><br><br>
-                <label for="deadlineWord">Deadline: </label>
-                <input type="datetime-local" id="deadlineWord" required value="2256-01-27T12:05"><br><br>
-            </form>
-            <hr />
-            <br />
-            <div id="resultWord"></div>
-        </div>
-    <br>
-    <br>
-    <br>
-    <hr>
-    <hr>
-
-        <div id="tab2">
-            <form id="pageCountForm">
-                <label for="totalPages">所需頁數：</label>
-                <input type="number" id="totalPages" required value="0"><br><br>
-                <label for="completedPages">已寫頁數：</label>
-                <input type="number" id="completedPages" required value="0"><br><br>
-                <label for="deadlinePage">Deadline: </label>
-                <input type="datetime-local" id="deadlinePage" required value="2256-01-27T12:05"><br><br>
-            </form>
-            <hr />
-            <br />
-            <div id="resultPage"></div>
-        </div>
+    <div id="tab1">
+        <form id="wordCountForm">
+            <label for="totalWords">所需字數：</label>
+            <input type="number" id="totalWords" required value="0"><br><br>
+            <label for="completedWords">已寫字數：</label>
+            <input type="number" id="completedWords" required value="0"><br><br>
+            <label for="deadlineWord">Deadline: </label>
+            <input type="datetime-local" id="deadlineWord" required value="2256-01-27T12:05"><br><br>
+        </form>
+        <hr />
+        <br />
+        <div id="resultWord"><br /><br /></div>
+    </div>
+    
+    <br /><hr /><br />
+    <div id="tab2">
+        <form id="pageCountForm">
+            <label for="totalPages">所需頁數：</label>
+            <input type="number" id="totalPages" required value="0"><br><br>
+            <label for="completedPages">已寫頁數：</label>
+            <input type="number" id="completedPages" required value="0"><br><br>
+            <label for="deadlinePage">Deadline: </label>
+            <input type="datetime-local" id="deadlinePage" required value="2256-01-27T12:05"><br><br>
+        </form>
+        <hr />
+        <br />
+        <div id="resultPage"></div>
     </div>
 
     <script>
-        /*$('#tabs').tabs();*/
-        
         function calculateWords() {
             var totalWords = parseInt(document.getElementById("totalWords").value);
             var completedWords = parseInt(document.getElementById("completedWords").value);
             var deadline = new Date(document.getElementById("deadlineWord").value);
 
             if (totalWords == completedWords) {
-                document.getElementById("resultWord").innerHTML = "";
+                document.getElementById("resultWord").innerHTML = "<br /><br />";
                 return;
             }
 
