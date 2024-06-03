@@ -4,17 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>趕死線小助手</title>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">
-    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </head>
 <body>
-    <div id="tabs">
         <h2>趕死線小助手</h2>
-        <ul>
-            <li><a href="#tab1">By words</a></li>
-            <li><a href="#tab2">By pages</a></li>
-        </ul>
 
         <div id="tab1">
             <form id="wordCountForm">
@@ -29,6 +21,9 @@
             <br />
             <div id="resultWord"></div>
         </div>
+    <br>
+    <br>
+    <br>
 
         <div id="tab2">
             <form id="pageCountForm">
@@ -46,7 +41,7 @@
     </div>
 
     <script>
-        $('#tabs').tabs();
+        /*$('#tabs').tabs();*/
         
         function calculateWords() {
             var totalWords = parseInt(document.getElementById("totalWords").value);
